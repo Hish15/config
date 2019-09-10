@@ -1,0 +1,42 @@
+[alias]
+    pull = pull --recurse-submodules=on-demand
+    spull = pull --recurse-submodules
+
+    d = diff --word-diff=color --patience --minimal
+    df = diff --ignore-all-space --patience --minimal
+
+    cm = commit
+    ca = commit --amend --no-edit 
+    co = checkout
+    cop = "!f(){ git checkout ${1-develop} && git pull;}; f"
+    cops = "!f(){ git checkout ${1-develop} && git pull --recurse-submodules;}; f"
+    st = status
+
+    last = log -1 --name-status
+    lsbranch = branch --sort=-committerdate
+
+    flush = "!f(){ git commit -am 'Trashed Awaaaaayyyyyy' --no-post-rewrite --no-verify && git reset HEAD~ --hard;}; f" 
+
+    godev = checkout develop
+    back-previous = checkout @{-1}
+    cob = checkout -b
+    mt = mergetool
+    graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(auto)%h - %d %s - %an%C(italic green)(%ar)%C(reset)' --all
+    pf = push --force
+    rbc = rebase --continue
+    rbs = rebase --skip
+    patch = add -p
+    cleanup = remote prune origin
+    subup = submodule update
+[core]
+    editor = vim
+    autocrlf = false
+
+[merge]
+    tool = vimdiff
+
+[mergetool]
+    keepBackup = false
+
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
