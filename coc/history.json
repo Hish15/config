@@ -1,0 +1,12 @@
+{
+  "lists": {
+    "%2Fmnt%2Fc%2FBoxSync": [
+      "!q"
+    ]
+  },
+  "extensions": {
+    "%2Fmnt%2Fc%2FBoxSync": [
+      ":q"
+    ]
+  }
+}
