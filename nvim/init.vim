@@ -39,7 +39,6 @@ Plug 'mhartington/oceanic-next'
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 Plug 'arcticicestudio/nord-vim'
-Plug 'joshdick/onedark'
 " Initialize plugin system
 call plug#end()
 
@@ -57,7 +56,7 @@ colorscheme nord
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Coc Setup + map
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-json']
+let g:coc_global_extensions = ['coc-json', 'coc-python']
 "Better display for messages
 set cmdheight=2
 
@@ -87,7 +86,25 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
+" windows switching
+nmap <C-j> <C-w>j 
+nmap <C-k> <C-w>k 
+nmap <C-l> <C-w>l 
+nmap <C-h> <C-w>h 
+nnoremap <silent> <C-Right> <c-w>l
+nnoremap <silent> <C-Left> <c-w>h
+nnoremap <silent> <C-Up> <c-w>k
+nnoremap <silent> <C-Down> <c-w>j
+"
+"Move line around
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
+nmap <F2> :tabe ~/.config/nvim/init.vim<CR>
 nmap <F4> :qa<CR>
 nmap <F5> :!ninja -C build<CR>
-nmap gf :grep -RI "<C-r><C-w>" *<CR>:cw<CR>
+nmap gf :grep -RI "<C-r><C-w>" **/*
