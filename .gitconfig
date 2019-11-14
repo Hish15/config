@@ -10,7 +10,7 @@
     co = checkout
     cop = "!f(){ git checkout ${1-develop} && git pull;}; f"
     cops = "!f(){ git checkout ${1-develop} && git pull --recurse-submodules;}; f"
-    st = status
+    st = status -s
 
     last = log -1 --name-status
     lsbranch = branch --sort=-committerdate
@@ -31,6 +31,7 @@
 [core]
     editor = vim
     autocrlf = false
+    pager = less -FRSX
 
 [merge]
     tool = vimdiff
@@ -40,3 +41,9 @@
 
 [mergetool "vimdiff"]
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[rerere]
+    enabled = true
+
+[include]
+    path = ~/.gitspecificconfig    
