@@ -29,10 +29,12 @@
     cleanup = remote prune origin
     subup = submodule update
 [core]
-    editor = vim
+    editor = nvim
     autocrlf = false
     pager = less -FRSX
 
+[diff]
+    tool = vimdiff
 [merge]
     tool = vimdiff
 
