@@ -39,6 +39,7 @@ Plug 'mhartington/oceanic-next'
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 " Initialize plugin system
 call plug#end()
 
@@ -52,7 +53,7 @@ if (has("termguicolors"))
 endif
 "Theme
 syntax enable
-colorscheme nord
+colorscheme gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Coc Setup + map
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
