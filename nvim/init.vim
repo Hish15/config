@@ -34,6 +34,7 @@ Plug 'Chiel92/vim-autoformat'
 " CoC for autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Themes
 Plug 'mhartington/oceanic-next'
 let g:oceanic_next_terminal_bold = 1
