@@ -116,5 +116,8 @@ alias replace="python3 ~/dotfiles/script/replace.py"
 #bindkey -v
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^P' fzf-completion
+bindkey '^I' $fzf_default_completion
 #Auto start SSH agent
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
