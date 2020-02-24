@@ -9,7 +9,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-
+set foldmethod=syntax
+set foldcolumn=4
 let g:clipboard = {
             \   'name': 'myClipboard',
             \   'copy': {
@@ -35,6 +36,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+nnoremap <C-p> :FZF<CR>
 " Themes
 Plug 'mhartington/oceanic-next'
 let g:oceanic_next_terminal_bold = 1
