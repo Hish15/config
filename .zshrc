@@ -70,7 +70,7 @@ __git_files () {
     _wanted files expl 'local files' _files     
 }
 # User configuration
-export PATH=$HOME/bin:/usr/local/bin:/opt/gcc-arm-none-eabi-8-2018-q4-major/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 #
@@ -108,6 +108,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 #Grep related aliases
 alias gr="grep -rI"
 alias grP="grep -rIP"
+alias todo="vim ~/todo.txt"
 
 alias ffind="f(){find . -name \"*${1}*\"}; f"
 alias cmaketoolchain="cmake -DCMAKE_TOOLCHAIN_FILE="
