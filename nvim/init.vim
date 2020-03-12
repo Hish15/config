@@ -32,6 +32,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/vim-easy-align'
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'Chiel92/vim-autoformat'
+Plug 'vim-airline/vim-airline'
 " CoC for autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
