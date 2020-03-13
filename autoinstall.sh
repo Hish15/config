@@ -30,14 +30,8 @@ cmake -H. -GNinja -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PWD/
 sudo cmake --build Release --target install
 #################################################################################
 #install fd (find alternative)
-git clone https://github.com/sharkdp/fd ~/fd
-cd ~/fd
-cargo build
-sudo cargo install
+sudo cargo install fd-find
 #################################################################################
 #install ripgrep
-mkdir ~/ripgrep
-cd ~/ripgrep
-wget https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
-sudo dpkg -i ripgrep_11.0.2_amd64.deb
+sudo cargo install ripgrep
 #################################################################################
