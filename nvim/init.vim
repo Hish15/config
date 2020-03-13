@@ -4,6 +4,11 @@ let mapleader = " "
 ""Set mouse mode
 set mouse=a
 set number
+"Casing on search. smarcase ignore case unless capital letter are explicitly
+"searched 
+set ignorecase
+set smartcase 
+
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
