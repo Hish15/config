@@ -43,6 +43,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <C-p> :FZF<CR>
+
+Plug 'jremmen/vim-ripgrep'
+let g:rg_highlight = 1
+
 " Themes
 Plug 'mhartington/oceanic-next'
 let g:oceanic_next_terminal_bold = 1
