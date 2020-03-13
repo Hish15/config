@@ -1,3 +1,17 @@
+#################################################################################
+# This script install all the good things I like and want on any ubuntu
+#################################################################################
+# Neovim
+git clone https://github.com/neovim/neovim.git ~/neovim
+cd ~/neovim
+git checkout -f stable
+mkdir build
+cmake -B build -DCMAKE_BUILD_TYPE=Release -GNinja
+ninja -C build
+sudo ninja -C build install
+
+#################################################################################
+# tmux
 sudo apt-get install tmux
 cd ~
 ln -s .config/.tmux.conf .tmux.conf
