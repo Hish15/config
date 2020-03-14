@@ -1,6 +1,8 @@
 #################################################################################
 # This script install all the good things I like and want on any ubuntu
 #################################################################################
+#for ssh autostart
+sudo apt-get install keychain
 # Neovim
 git clone https://github.com/neovim/neovim.git ~/neovim
 cd ~/neovim
