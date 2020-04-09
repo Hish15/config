@@ -17,19 +17,14 @@ set expandtab
 set foldmethod=syntax
 set foldlevelstart=99
 set foldcolumn=4
-let g:clipboard = {
-            \   'name': 'myClipboard',
-            \   'copy': {
-            \      '+': 'xcopy',
-            \      '*': 'xcopy',
-            \    },
-            \   'paste': {
-            \      '+': 'xcopy',
-            \      '*': 'xcopy',
-            \   },
-            \   'cache_enabled': 1,
-            \ }
-
+"Setup clipboard for wsl
+if has('wsl')
+    augroup Yank
+        autocmd!
+        autocmd TextYankPost * :call system('clip.exe ',@")
+    augroup END
+endif
+map <leader>y "*y
 
 " - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')
