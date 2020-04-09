@@ -31,6 +31,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
+"Toggle to relativenumber on normal mode, and absolute in insert mode 
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 set number relativenumber
 " Plugin outside ~/.vim/plugged with post-update hook
@@ -43,6 +44,8 @@ Plug 'junegunn/fzf.vim'
 nnoremap <C-p> :FZF<CR>
 
 Plug 'jremmen/vim-ripgrep'
+"This use RipGrep to search the whole current directory (search under cursor)
+nnoremap <leader>g :Rg<CR>
 let g:rg_highlight = 1
 
 " Themes
@@ -115,6 +118,10 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
+"
+"Move in change list
+nnoremap <leader><Down> :cnext<CR>
+nnoremap <leader><Up> :previous<CR>
 
 nmap <F2> :tabe ~/.config/nvim/init.vim<CR>
 nmap <F4> :qa<CR>
