@@ -101,13 +101,11 @@ ZSH_TMUX_AUTOSTART="true"
 # Example aliases
 alias vim="nvim"
 alias vimdiff="nvim -d"
+#fast open config files
 alias vimconfig="vim ~/.vimrc"
 alias zshconfig="vim ~/.zshrc"
 alias gitconfig="vim ~/.gitconfig"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-#Grep related aliases
-alias gr="grep -rI"
-alias grP="grep -rIP"
 alias todo="vim ~/todo.txt"
 
 alias ffind="f(){find . -name \"*${1}*\"}; f"
