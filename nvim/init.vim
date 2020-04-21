@@ -101,6 +101,9 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
+" Insert mode remaps
+"current word to upper letter
+inoremap <C-u> <esc>viwUea
 " windows switching
 nmap <C-j> <C-w>j 
 nmap <C-k> <C-w>k 
@@ -110,20 +113,12 @@ nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
-"
-"Move line around
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-"
 "Move in change list
-nnoremap <leader><Down> :cnext<CR>
-nnoremap <leader><Up> :previous<CR>
+nnoremap <leader><Down> :cnext<CR>zz
+nnoremap <leader><Up> :previous<CR>zz
 
 nmap <F2> :tabe ~/.config/nvim/init.vim<CR>
 nmap <F4> :qa<CR>
+nmap <leader><F4> :qa!<CR>
 nmap <F5> :!ninja -C build<CR>
 nmap gf :grep -RI "<C-r><C-w>" **/*
