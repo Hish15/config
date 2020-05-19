@@ -16,7 +16,6 @@ set expandtab
 
 set foldmethod=syntax
 set foldlevelstart=99
-set foldcolumn=4
 "Setup clipboard for wsl
 if has('wsl')
     augroup Yank
