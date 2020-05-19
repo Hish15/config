@@ -1,30 +1,27 @@
 [alias]
     pull = pull --recurse-submodules=on-demand
     spull = pull --recurse-submodules
+    pusho ="!f(){ git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`;}; f"
 
     d = diff --word-diff=color --patience --minimal
     df = diff --ignore-all-space --patience --minimal
+    dff = diff --name-status
 
     cm = commit
     ca = commit --amend --no-edit 
     co = checkout
+    cob = checkout -b
     cop = "!f(){ git checkout ${1-develop} && git pull;}; f"
     cops = "!f(){ git checkout ${1-develop} && git pull --recurse-submodules;}; f"
     st = status -s
 
-    last = log -1 --name-status
     lsbranch = branch --sort=-committerdate
 
     flush = "!f(){ git commit -am 'Trashed Awaaaaayyyyyy' --no-post-rewrite --no-verify && git reset HEAD~ --hard;}; f" 
 
-    godev = checkout develop
-    back-previous = checkout @{-1}
-    cob = checkout -b
     mt = mergetool
     graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(auto)%h - %d %s - %an%C(italic green)(%ar)%C(reset)' --all
-    pf = push --force
     rbc = rebase --continue
-    rbs = rebase --skip
     patch = add -p
     cleanup = remote prune origin
     subup = submodule update
