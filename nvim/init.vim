@@ -1,4 +1,5 @@
 let mapleader = " "
+set autowrite
 "Adde line number at begening of line
 "set number
 ""Set mouse mode
@@ -103,15 +104,18 @@ endfunction
 " Insert mode remaps
 "current word to upper letter
 inoremap <C-u> <esc>viwUea
+" Move in window 
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
 " windows switching
-nmap <C-j> <C-w>j 
-nmap <C-k> <C-w>k 
-nmap <C-l> <C-w>l 
-nmap <C-h> <C-w>h 
-nnoremap <silent> <C-Right> <c-w>l
-nnoremap <silent> <C-Left> <c-w>h
-nnoremap <silent> <C-Up> <c-w>k
-nnoremap <silent> <C-Down> <c-w>j
+nmap <A-j> <C-w>j 
+nmap <A-k> <C-w>k 
+nmap <A-l> <C-w>l 
+nmap <A-h> <C-w>h 
+nnoremap <silent> <A-Right> <C-w>l
+nnoremap <silent> <A-Left> <C-w>h
+nnoremap <silent> <A-Up> <C-w>k
+nnoremap <silent> <A-Down> <C-w>j
 "Move in change list
 nnoremap <leader><Down> :cnext<CR>zz
 nnoremap <leader><Up> :previous<CR>zz
