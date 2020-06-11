@@ -71,6 +71,7 @@ colorscheme gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Coc Setup + map
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap jj <Esc>
 let g:coc_global_extensions = ['coc-json', 'coc-python']
 "Better display for messages
 set cmdheight=2
