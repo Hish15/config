@@ -71,7 +71,6 @@ colorscheme gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Coc Setup + map
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap jj <Esc>
 let g:coc_global_extensions = ['coc-json', 'coc-python']
 "Better display for messages
 set cmdheight=2
@@ -102,7 +101,13 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Insert mode remaps
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Exit insert mode
+inoremap jj <Esc>
+inoremap jk <Esc>
+
 "current word to upper letter
 inoremap <C-u> <esc>viwUea
 " Move in window 
@@ -125,4 +130,3 @@ nmap <F2> :tabe ~/.config/nvim/init.vim<CR>
 nmap <F4> :qa<CR>
 nmap <leader><F4> :qa!<CR>
 nmap <F5> :!ninja -C build<CR>
-nmap gf :grep -RI "<C-r><C-w>" **/*
