@@ -129,4 +129,5 @@ nnoremap <leader><Up> :previous<CR>zz
 nmap <F2> :tabe ~/.config/nvim/init.vim<CR>
 nmap <F4> :qa<CR>
 nmap <leader><F4> :qa!<CR>
-nmap <F5> :!ninja -C build<CR>
+nmap <F5> :!ninja -Cbuild<CR>
+nmap <leader><F5> :!cmake -Bbuild -GNinja<CR>
