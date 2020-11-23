@@ -30,7 +30,7 @@
     subup = submodule update
 [core]
     editor = nvim
-    autocrlf = false
+    autocrlf = true
     pager = less -FRSX
 
 [diff]
