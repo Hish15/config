@@ -41,7 +41,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :GFiles<CR>
 
 Plug 'jremmen/vim-ripgrep'
 "This use RipGrep to search the whole current directory (search under cursor)
@@ -129,5 +129,11 @@ nnoremap <leader><Up> :previous<CR>zz
 nmap <F2> :tabe ~/.config/nvim/init.vim<CR>
 nmap <F4> :qa<CR>
 nmap <leader><F4> :qa!<CR>
+
 nmap <F5> :!ninja -Cbuild<CR>
 nmap <leader><F5> :!cmake -Bbuild -GNinja<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Home made functions                                                          "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+com! FormatJSON %!python -m json.tool
