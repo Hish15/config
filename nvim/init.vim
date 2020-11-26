@@ -28,12 +28,6 @@ map <leader>y "*y
 
 " - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-"Toggle to relativenumber on normal mode, and absolute in insert mode 
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-set number relativenumber
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-airline/vim-airline'
