@@ -28,6 +28,8 @@ map <leader>y "*y
 
 " - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')
+"git sign status
+Plug 'mhinz/vim-signify'
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-airline/vim-airline'
