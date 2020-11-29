@@ -7,6 +7,9 @@
     df = diff --ignore-all-space --patience --minimal
     dff = diff --name-status
 
+    slog = "!f(){ git log --oneline -${1-5};}; f"
+
+
     cm = commit
     ca = commit --amend --no-edit 
     co = checkout
