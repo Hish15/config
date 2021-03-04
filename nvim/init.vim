@@ -44,6 +44,13 @@ Plug 'jremmen/vim-ripgrep'
 nnoremap <leader>g :Rg<CR>
 let g:rg_highlight = 1
 
+Plug 'easymotion/vim-easymotion'
+"let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1 " Enable smartcase
+nmap s <Plug>(easymotion-overwin-f)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 " Themes
 Plug 'mhartington/oceanic-next'
 let g:oceanic_next_terminal_bold = 1
