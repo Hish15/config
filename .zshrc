@@ -108,6 +108,8 @@ alias gitconfig="vim ~/.gitconfig"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias todo="vim ~/todo.txt"
 
+#Oupsy fixes
+alias gti="git"
 alias ffind="f(){find . -name \"*${1}*\"}; f"
 alias cmaketoolchain="cmake -DCMAKE_TOOLCHAIN_FILE="
 function stflashbin { ST-LINK_CLI.exe -P ${1-*.bin} 0x08000000 && ST-LINK_CLI.exe -Rst; }
