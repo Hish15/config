@@ -107,6 +107,8 @@ alias zshconfig="vim ~/.zshrc"
 alias gitconfig="vim ~/.gitconfig"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias todo="vim ~/todo.txt"
+export TODOTXT_DEFAULT_ACTION=ls
+alias t="todo.sh"
 
 #Oupsy fixes
 alias gti="git"
