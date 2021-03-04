@@ -8,6 +8,7 @@
     dff = diff --name-status
 
     slog = "!f(){ git log --oneline -${1-5};}; f"
+    last = log -1 --name-status
 
 
     cm = commit
