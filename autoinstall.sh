@@ -1,20 +1,16 @@
 #################################################################################
 # This script install all the good things I like and want on any ubuntu
 #################################################################################
+sudo apt-get install -y cmake ninja-build
 #for ssh autostart
-sudo apt-get install keychain
+sudo apt-get install -y keychain
 # Neovim
-git clone https://github.com/neovim/neovim.git ~/neovim
-cd ~/neovim
-git checkout -f stable
-mkdir build
-cmake -B build -DCMAKE_BUILD_TYPE=Release -GNinja
-ninja -C build
-sudo ninja -C build install
+sudo apt-get install -y -q neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 #################################################################################
 # tmux
-sudo apt-get install tmux
+sudo apt-get install -y tmux
 cd ~
 ln -s .config/.tmux.conf .tmux.conf
 #Installing tmux manager
@@ -22,7 +18,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #################################################################################
 #installing CCLS LSP server for nvim
 #dependencies
-sudo apt-get install zlib1g-dev libncurses-dev clang libclang-dev
+sudo apt-get install -y zlib1g-dev libncurses-dev clang libclang-dev
 git clone --depth=1 --recursive https://github.com/MaskRay/ccls ~/ccls
 cd ~/ccls
 #clang is needed
