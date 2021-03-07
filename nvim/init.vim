@@ -74,7 +74,7 @@ colorscheme gruvbox
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Coc Setup + map
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-json', 'coc-python']
+let g:coc_global_extensions = ['coc-clangd', 'coc-python', 'coc-yaml']
 "Better display for messages
 set cmdheight=2
 
