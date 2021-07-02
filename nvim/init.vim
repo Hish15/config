@@ -33,6 +33,11 @@ Plug 'mhinz/vim-signify'
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'Chiel92/vim-autoformat'
 Plug 'vim-airline/vim-airline'
+
+Plug 'junegunn/vim-easy-align' "Used to make alignements easier
+" Align GitHub-flavored Markdown tables
+xmap ga <Plug>(EasyAlign)
+
 " CoC for autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
