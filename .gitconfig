@@ -28,7 +28,7 @@
     rbc = rebase --continue
     patch = add -p
     cleanup = remote prune origin
-    subup = submodule update
+    subup = submodule update --init --recursive
 [core]
     editor = nvim
     autocrlf = false
