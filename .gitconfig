@@ -31,9 +31,9 @@
     subup = submodule update --init --recursive
 [core]
     editor = nvim
-    autocrlf = false
     pager = less -FRSX
 
+	autocrlf = input
 [diff]
     tool = vimdiff
 [merge]
