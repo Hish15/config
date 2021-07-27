@@ -61,7 +61,15 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z cp tmux fd)
+plugins=(
+    cp
+    fd
+    fzf
+    git
+    tmux
+    z
+    zsh-autosuggestions
+)
 source $ZSH/oh-my-zsh.sh
 case $(uname -a) in
 	   *Microsoft*) unsetopt BG_NICE ;;
@@ -122,5 +130,6 @@ alias replace="python3 ~/dotfiles/script/replace.py"
 export FZF_COMPLETION_TRIGGER=''
 bindkey '^P' fzf-completion
 bindkey '^I' $fzf_default_completion
+bindkey '^ ' autosuggest-execute
 #Auto start SSH agent
 eval $(keychain --eval github)
