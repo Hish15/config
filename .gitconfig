@@ -33,7 +33,7 @@
     editor = nvim
     pager = less -FRSX
 
-	autocrlf = input
+    autocrlf = false
 [diff]
     tool = vimdiff
 [merge]
