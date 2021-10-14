@@ -37,22 +37,22 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align' "Used to make alignements easier
 " Align GitHub-flavored Markdown tables
 xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
-" CoC for autocompletion
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-nnoremap <C-p> :GFiles<CR>
 
 Plug 'jremmen/vim-ripgrep'
 "This use RipGrep to search the whole current directory (search under cursor)
 nnoremap <leader>g :Rg<CR>
 let g:rg_highlight = 1
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+nnoremap <C-p> :Files<CR>
+
 Plug 'easymotion/vim-easymotion'
 "let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1 " Enable smartcase
-nmap s <Plug>(easymotion-overwin-f2)
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
@@ -90,8 +90,6 @@ set updatetime=300
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -99,16 +97,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" gh - get hint on whatever's under the cursor
-nnoremap <silent> gh :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
-endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Insert mode remaps
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
