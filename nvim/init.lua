@@ -17,12 +17,29 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
- "morhetz/gruvbox",
- 'neovim/nvim-lspconfig'
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+	"morhetz/gruvbox"
+})
+local lspconfig = require('lspconfig')
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+	  'clangd',
+	  'cmake',
+	  'lua_ls',
+	  'pyright',
+	  'rust_analyzer',
+  }
 })
 
-require'lspconfig'.pyright.setup{}
-
+require('mason-lspconfig').setup_handlers({
+  function(server)
+    lspconfig[server].setup({})
+  end,
+})
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -62,23 +79,6 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
-require('lspconfig')['rust_analyzer'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    -- Server-specific settings...
-    settings = {
-      ["rust-analyzer"] = {}
-    }
-}
-
 
 vim.opt.termguicolors = true
 vim.cmd('colorscheme gruvbox')
