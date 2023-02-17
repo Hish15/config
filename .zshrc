@@ -78,7 +78,7 @@ __git_files () {
     _wanted files expl 'local files' _files     
 }
 # User configuration
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 #
