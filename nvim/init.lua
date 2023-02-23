@@ -15,13 +15,17 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup({
+local plugins = {
+	"folke/tokyonight.nvim",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-	"morhetz/gruvbox"
-})
+}
+require("lazy").setup(plugins)
+
+vim.opt.termguicolors = true
+vim.cmd([[colorscheme tokyonight]])
+
 local lspconfig = require('lspconfig')
 
 require('mason').setup({})
@@ -80,7 +84,5 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-vim.opt.termguicolors = true
-vim.cmd('colorscheme gruvbox')
 
 vim.keymap.set('n', "<F2>", ':tabe ~/.config/nvim/init.lua<CR>', { noremap = true, silent = true })
