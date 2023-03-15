@@ -32,17 +32,16 @@ require("lazy").setup(plugins)
 vim.opt.termguicolors = true
 vim.cmd([[colorscheme tokyonight]])
 
+
+
 local lspconfig = require('lspconfig')
 
 require('mason').setup({})
+
+local servers = { 'clangd', 'cmake', 'lua_ls', 'pyright', 'rust_analyzer' }
+
 require('mason-lspconfig').setup({
-  ensure_installed = {
-	  'clangd',
-	  'cmake',
-	  'lua_ls',
-	  'pyright',
-	  'rust_analyzer',
-  }
+  ensure_installed = servers
 })
 
 require('mason-lspconfig').setup_handlers({
