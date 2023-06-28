@@ -20,6 +20,7 @@ local plugins = {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+	'jremmen/vim-ripgrep',
 }
 require("lazy").setup(plugins)
 
