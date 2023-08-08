@@ -27,7 +27,9 @@
     graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(auto)%h - %d %s - %an%C(italic green)(%ar)%C(reset)' --all
     rbc = rebase --continue
     patch = add -p
-    cleanup = remote prune origin
+
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|main' | xargs -n 1 -r git branch -d"
+
     subup = submodule update --init --recursive
 [core]
     editor = nvim
@@ -50,3 +52,9 @@
 
 [include]
     path = ~/.gitspecificconfig    
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
