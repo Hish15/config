@@ -1,6 +1,10 @@
 #################################################################################
 # This script install all the good things I like and want on any ubuntu
 #################################################################################
+#Install zsh and oh my zsh
+sudo apt install zsh -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 sudo apt-get install -y cmake ninja-build
 #for ssh autostart
 sudo apt-get install -y keychain
