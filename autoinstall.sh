@@ -9,8 +9,10 @@ sudo apt-get install -y cmake ninja-build
 #for ssh autostart
 sudo apt-get install -y keychain
 # Neovim
-sudo apt-get install -y -q neovim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir bin
+curl -L https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz | tar -xvz -C ~/bin/
+cd /usr/local/bin
+sudo cp -s ~/nvim-linux64/bin/nvim .
 
 #################################################################################
 # tmux
