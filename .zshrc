@@ -43,7 +43,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+#DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -51,7 +51,7 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -118,13 +118,13 @@ alias todo="vim ~/todo.txt"
 export TODOTXT_DEFAULT_ACTION=ls
 alias t="todo.sh"
 
-#Oupsy fixes
-alias gti="git"
 alias ffind="f(){find . -name \"*${1}*\"}; f"
 alias cmaketoolchain="cmake -DCMAKE_TOOLCHAIN_FILE="
 function stflashbin { ST-LINK_CLI.exe -P ${1-*.bin} 0x08000000 && ST-LINK_CLI.exe -Rst; }
 alias replace="python3 ~/dotfiles/script/replace.py"
-#bindkey -v
+
+#vi mode on console
+bindkey -v
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER=''
