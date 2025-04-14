@@ -105,10 +105,10 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
 # For a full list of active aliases, run `alias`.
 #
 # Tmux congiguration 
-ZSH_TMUX_AUTOSTART="true"
+# ZSH_TMUX_AUTOSTART="true"
 # Example aliases
-alias vim="nvim"
-alias vimdiff="nvim -d"
+alias vim=nvim
+alias vimdiff="vim -d"
 #fast open config files
 alias vimconfig="vim ~/.vimrc"
 alias zshconfig="vim ~/.zshrc"
@@ -118,7 +118,8 @@ alias todo="vim ~/todo.txt"
 export TODOTXT_DEFAULT_ACTION=ls
 alias t="todo.sh"
 
-alias ffind="f(){find . -name \"*${1}*\"}; f"
+alias rga="rg --no-ignore --hidden"
+alias fda="fd --no-ignore"
 alias cmaketoolchain="cmake -DCMAKE_TOOLCHAIN_FILE="
 function stflashbin { ST-LINK_CLI.exe -P ${1-*.bin} 0x08000000 && ST-LINK_CLI.exe -Rst; }
 alias replace="python3 ~/dotfiles/script/replace.py"
